@@ -1,0 +1,98 @@
+.navbar {
+  position: relative;
+}
+
+.navbar-nav {
+  display: none;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  align-items: center;
+}
+.navbar-nav > li {
+  padding: 0 10px;
+}
+.navbar-nav > li > a {
+  color: black;
+  font-size: 16px;
+}
+.navbar-nav > li > a:hover {
+  text-decoration: none;
+}
+.navbar-nav > li.is-active > * {
+  pointer-events: none;
+  text-decoration: none;
+  color: red;
+}
+
+.navbar-nav-mobile {
+  display: none;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  width: 100px;
+  background-color: gray;
+  padding: 20px;
+}
+.navbar-nav-mobile > li > a {
+  color: #ffffff;
+}
+.navbar-toggle {
+  display: inline-block;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background-color: blue;
+}
+.navbar-toggle span,
+.navbar-toggle span::before,
+.navbar-toggle span::after {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
+  left: 50%;
+  margin-left: -10px;
+  background-color: #ffffff;
+}
+.navbar-toggle span::before,
+.navbar-toggle span::after {
+  content: "";
+  display: block;
+  transition: 1s;
+}
+
+.navbar-toggle span::before {
+  transform: translateY(-5px);
+}
+.navbar-toggle span::after {
+  transform: translateY(5px);
+}
+.navbar-toggle.is-active span {
+  height: 0;
+}
+
+.navbar-toggle.is-active span:before {
+  transform: rotate(-45deg);
+}
+
+.navbar-toggle.is-active span:after {
+  transform: rotate(45deg);
+}
+
+.navbar-toggle.is-active + .navbar-nav-mobile {
+  display: block;
+}
+
+@media (min-width: 400px) {
+  .navbar-nav {
+    display: flex;
+  }
+  .navbar-toggle {
+    display: none;
+  }
+  .navbar-nav-mobile {
+    display: none !important;
+  }
+}
